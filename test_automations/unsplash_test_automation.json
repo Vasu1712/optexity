@@ -1,0 +1,23 @@
+{
+  "url": "https://unsplash.com",
+  "parameters": {
+    "input_parameters": {
+      "search_query": [
+        "Fifa"
+      ]
+    },
+    "generated_parameters": {}
+  },
+  "nodes": [
+    {
+      "type": "action_node",
+      "interaction_action": {
+        "agentic_task": {
+          "task": "Search for 'Fifa' using the search box. From the search results, click on the first image. Then click the download button to download the image.",
+          "max_steps": 20,
+          "backend": "browser_use"
+        }
+      }
+    }
+  ]
+}
