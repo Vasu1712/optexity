@@ -576,7 +576,16 @@ def get_app_with_endpoints(is_aws: bool, child_id: int, port: int = -1):
                 
                 logger.info(f"[hihellobye] loading automation from CWD={os.getcwd()}")
                 from optexity.schema.automation import Automation
-                with open("test_automation.json", "r") as f: ##only for now-aws(local) testing, change to test_automation_cached.json to test cached workflow
+
+                automation_path = os.getenv(
+                    "OPTEXITY_AUTOMATION_PATH",
+                    "test_automations/loop_test_automation.json",
+                )
+                logger.info(
+                    f"Loading local automation override from '{automation_path}' "
+                    f"(resolved: {os.path.abspath(automation_path)}, CWD={os.getcwd()})"
+                )
+                with open(automation_path, "r") as f:
                     automation = json.load(f)
                     automation = Automation.model_validate(automation)
                 task.automation = automation

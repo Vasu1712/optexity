@@ -1,0 +1,46 @@
+{
+  "url": "https://unsplash.com/",
+  "parameters": {
+    "input_parameters": {},
+    "generated_parameters": {}
+  },
+  "nodes": [
+    {
+      "type": "action_node",
+      "interaction_action": {
+        "input_text": {
+          "command": "locator(\"input[name='searchKeyword']\").first",
+          "prompt_instructions": "Enter 'Fifa' into searchKeyword",
+          "input_text": "Fifa"
+        }
+      }
+    },
+    {
+      "type": "action_node",
+      "interaction_action": {
+        "click_element": {
+          "command": "get_by_role(\"link\", name=\"a soccer ball sitting on top of a lush green field\").first",
+          "prompt_instructions": "Click on a soccer ball sitting on top of a lush green field"
+        }
+      }
+    },
+    {
+      "type": "action_node",
+      "interaction_action": {
+        "click_element": {
+          "command": "get_by_role(\"button\", name=\"Download\").first",
+          "prompt_instructions": "Click on Download"
+        }
+      }
+    },
+    {
+      "type": "action_node",
+      "interaction_action": {
+        "click_element": {
+          "command": "get_by_role(\"button\", name=\"An X shape\").first",
+          "prompt_instructions": "Click on An X shape"
+        }
+      }
+    }
+  ]
+}

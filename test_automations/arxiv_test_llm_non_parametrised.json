@@ -1,0 +1,50 @@
+{
+  "url": "https://arxiv.org/",
+  "parameters": {
+    "input_parameters": {
+      "search_query": [
+        "AI"
+      ]
+    },
+    "generated_parameters": {}
+  },
+  "nodes": [
+    {
+      "type": "action_node",
+      "interaction_action": {
+        "input_text": {
+          "command": "locator(\"input[name='query']\").first",
+          "prompt_instructions": "Enter search query into the search input field",
+          "input_text": "{search_query[0]}"
+        }
+      }
+    },
+    {
+      "type": "action_node",
+      "interaction_action": {
+        "click_element": {
+          "command": "get_by_role(\"button\", name=\"Search\").first",
+          "prompt_instructions": "Click the Search button"
+        }
+      }
+    },
+    {
+      "type": "action_node",
+      "interaction_action": {
+        "click_element": {
+          "command": "get_by_role(\"link\", name=\"arXiv:2606.20539\").first",
+          "prompt_instructions": "Click on the first paper link"
+        }
+      }
+    },
+    {
+      "type": "action_node",
+      "interaction_action": {
+        "click_element": {
+          "command": "get_by_role(\"link\", name=\"View PDF\").first",
+          "prompt_instructions": "Click on the View PDF link"
+        }
+      }
+    }
+  ]
+}
